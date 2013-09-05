@@ -54,26 +54,24 @@ function($, Oskari) {
             mapfull.start();
             divmanazer.start();
 
-            /* loading more bundles */
-            require(["_bundles_/require/bundle/require/bundle", 
-            "_bundles_/require/bundle/requiresf/bundle", 
-            "_bundles_/require/bundle/requireminimal/bundle", 
-            "_bundles_/require/bundle/requirenr/bundle", 
-            "_bundles_/require/bundle/requireminloc/bundle", 
-            "_bundles_/require/bundle/requirenop/bundle", 
-            "_bundles_/require/bundle/requirei18n/bundle"], 
-            function(rclassic, rsinglefile, rminimal, rnorules, rminlinesofcode, rnop, ri18n) {
+            var bundles = [
+                "_bundles_/require/bundle/require/bundle",
+                "_bundles_/require/bundle/requiresf/bundle",
+                "_bundles_/require/bundle/requireminimal/bundle",
+                "_bundles_/require/bundle/requirenr/bundle",
+                "_bundles_/require/bundle/requireminloc/bundle",
+                "_bundles_/require/bundle/requirenop/bundle",
+                "_bundles_/require/bundle/requirei18n/bundle"
+                ]
 
-                /* and starting */
-                rclassic.start();
-                rsinglefile.start();
-                rminimal.start();
-                rnorules.start();
-                rminlinesofcode.start();
-                rnop.start();
-                ri18n.start();
-
-            })
+            for(var i = 0, ilen = bundles.length; i < ilen; i++) {
+                /* loading more bundles */
+                require([bundles[i]], 
+                function(bundle) {
+                    /* and starting */
+                    bundle.start();
+                })
+            }
         });
     })
 });
