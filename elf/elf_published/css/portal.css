@@ -76,13 +76,13 @@ img::-moz-selection { background: transparent; }
 
 #logo {
 	padding: 30px 0 35px 10px;
-	
-	p {
-		font-size: 17px;
-		color: #3c3c3c;
-		text-shadow: 0 1px 0 rgba(255,255,255,.5);
-		padding: 10px 0 0 10px;
-	}
+}
+
+#logo p {
+	font-size: 17px;
+	color: #3c3c3c;
+	text-shadow: 0 1px 0 rgba(255,255,255,.5);
+	padding: 10px 0 0 10px;
 }
 
 #mainmenu {
@@ -874,7 +874,7 @@ ul.footer-wrp p {
 	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#217ad4', endColorstr='#3a97ee');
 }
 
-input[type="text"], input[type="password"], input[type="search"] {
+input[type="text"] {
 	font: 13px/100% Arial, sans-serif;
 	color: #878787;
 	padding: 8px 35px 8px 10px;
@@ -951,7 +951,6 @@ select {
 		display:block;
 	}
 	.portlet-dropzone.empty {
-		height:20px;
 		overflow:hidden;
 	}
 	.lfr-has-sidebar #main-content {
@@ -961,9 +960,6 @@ select {
 .portlet {
     margin: 0 0 15px;
 }
-.portlet-borderless-container {
-    margin-bottom:20px;
-}	
 /*map view*/
 .sidebar-toggle {
     background-color: #FFDE00;
@@ -994,4 +990,17 @@ select {
 .mml-map #logo.no-hover #logo-only {
 	float:right;
 	margin:0 5px 0 0;
+}
+
+#langSelector {
+	position: absolute;
+	bottom: 0;
+	margin: 10px;
+	color: white;
+}
+#langSelector p {
+	margin-bottom: 5px;
+}
+#langSelector a {
+	color: white;
 }
