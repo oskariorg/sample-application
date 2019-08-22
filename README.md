@@ -20,7 +20,7 @@ In this model, it's left to the developer to checkout the correct branches/versi
 
 After you have done the basic setup (above), the application can be built directly from this repo with eg. `npm run build -- --env.appdef=1.53:applications`. The output will be under `dist/`. See the main [oskari-frontend repo](https://github.com/oskariorg/oskari-frontend#readme) for detailed instructions about the build parameters.
 
-## Running the dev server
+### Running the dev-server
 
 `oskari-frontend` contains webpack dev server with hot deploy support. To start the server simply run `npm run start` in this repo.
 
