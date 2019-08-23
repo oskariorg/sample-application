@@ -33,9 +33,11 @@ An Oskari frontend application consists of bundles that are defined in the `main
 The applications use oskari-frontend framework's Webpack to create builds. The framework introduces loaders that can be used for importing Oskari bundles.
 
 * oskari-loader
- Bundles will be included to the main app js bundle.
+
+   Bundles will be included to the main app js bundle.
 * oskari-lazy-loader
- Bundles are loaded dynamically at runtime. These bundles won't be included in the main app js bundle.
+
+   Bundles are loaded dynamically at runtime. These bundles won't be included in the main app js bundle.
 
 Bundles that are used only in a limited part of the app (for example admin tools) can be configured to load dynamically by using the `oskari-lazy-loader`.
 >Using lazy loader will decrease the size of the main app JS bundle and speed up the page loading.
