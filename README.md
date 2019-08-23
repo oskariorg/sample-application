@@ -28,12 +28,23 @@ After you have done the basic setup (above), the application can be built direct
 
 See the main [oskari-frontend repo](https://github.com/oskariorg/oskari-frontend#readme) for detailed instructions about the build parameters.
 
+### App composition
+
+An Oskari frontend application consists of bundles that are defined in the `main.js` for each app (an example can be found under applications/geoportal). Only bundles referenced here can be instantiated at runtime.
+
+The applications use oskari-frontend framework's Webpack to create builds. The framework introduces loaders that can be used for importing Oskari bundles.
+
+* oskari-loader - Bundles will be included to the main app js bundle.
+* oskari-lazy-loader - Bundles are loaded dynamically at runtime. These bundles won't be included in the main app js bundle.
+
+Bundles that are used only in a limited part of the app (for example admin tools) can be configured to load dynamically by using the `oskari-lazy-loader`. This will decrease the size of the main app JS bundle and speed up the page loading.
+
 ### Managing dependencies
 
 With the symlinks in place import-statements and other path references to `oskari-frontend` will resolve to the appropriate directories. This means you can reference bundles in `oskari-frontend` repo with eg. `import 'oskari-loader!oskari-frontend/packages/statistics/statsgrid/bundle.js'` in main.js.
 
 If you wan't to build a custom bundle using oskari-frontend components, you can reference those by using `oskari-frontend` in bundle.js.
-```
+```javascript
 ...
     source: {
         scripts: [
@@ -73,5 +84,15 @@ All Oskari-related issues should be reported here: https://github.com/oskariorg/
 
 ### Known issues
 
-WIP: Build fails with `ENOENT: no such file or directory... This is related to npm not being able to find a file.`
+##### Build fails on an error
+```cmd
+npm ERR! path [...]
+npm ERR! code ENOENT
+npm ERR! errno -2
+npm ERR! syscall rename
+npm ERR! enoent ENOENT: no such file or directory, rename '[...]' -> '[...]'
+npm ERR! enoent This is related to npm not being able to find a file.
+npm ERR! enoent 
+```
+**WIP**
 * This is most likely due to `package-lock.json` being present in your environment. Package locking mechanism doesn't work gracefully with symlinked node_modules (`oskari-frontend / oskari-frontend-contrib`). Remove `package-lock.json` for now.
