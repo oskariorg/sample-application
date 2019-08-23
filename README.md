@@ -20,7 +20,7 @@ Running `npm install` in this repo will create symlinks to the `oskari-frontend`
 
 In this model, it's left to the developer to checkout the correct branches/versions of the above repos.
 
-## Building your own application
+## Creating your own Oskari application
 
 You may use this repository as a base for your own Oskari application frontend. For backend see https://github.com/oskariorg/sample-server-extension.
 
