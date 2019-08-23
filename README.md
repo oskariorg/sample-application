@@ -1,6 +1,10 @@
-# Sample application
+# ![alt text](../master/applications/geoportal/logo.png "Oskari") Sample application
 
-Sample frontend for Oskari map application. Running at demo.oskari.org.
+This is a template that can be used as base for building Oskari application frontend.
+
+Click the "Use this template" button on the repository to create a copy of the files under your username and start customizing it.
+
+This application can be seen in http://dev.oskari.org. For backend see https://github.com/oskariorg/sample-server-extension.
 
 ## Setup
 
@@ -16,17 +20,53 @@ Running `npm install` in this repo will create symlinks to the `oskari-frontend`
 
 In this model, it's left to the developer to checkout the correct branches/versions of the above repos.
 
-## Building
+## Creating your own Oskari application
 
-After you have done the basic setup (above), the application can be built directly from this repo with eg. `npm run build -- --env.appdef=1.53:applications`. The output will be under `dist/`. See the main [oskari-frontend repo](https://github.com/oskariorg/oskari-frontend#readme) for detailed instructions about the build parameters.
+After you have done the basic setup (above), the application can be built directly from this repo with eg. `npm run build -- --env.appdef=1.0.0:applications`. The output will be under `dist/`.
 
-### Running the dev-server
+See the main [oskari-frontend repo](https://github.com/oskariorg/oskari-frontend#readme) for detailed instructions about the build parameters.
 
-`oskari-frontend` contains webpack dev server with hot deploy support. To start the server simply run `npm run start` in this repo.
+### App composition
+
+An Oskari frontend application consists of bundles that are defined in the `main.js` for each app (an example can be found [here](../master/applications/geoportal/main.js)). Only bundles referenced here can be instantiated at runtime.
+
+The applications use oskari-frontend framework's Webpack to create builds. The framework introduces loaders that can be used for importing Oskari bundles.
+
+* oskari-loader
+
+   Bundles will be included to the main app js bundle.
+* oskari-lazy-loader
+
+   Bundles are loaded dynamically at runtime. These bundles won't be included in the main app js bundle.
+
+Bundles that are used only in a limited part of the app (for example admin tools) can be configured to load dynamically by using the `oskari-lazy-loader`.
+>Using lazy loader will decrease the size of the main app JS bundle and speed up the page loading.
 
 ### Managing dependencies
 
-With the symlinks in place import-statements and other path references to `oskari-frontend` will resolve to the appropriate directories. This means you can reference bundles in `oskari-frontend` repo with eg. `import 'oskari-loader!oskari-frontend/packages/statistics/statsgrid/bundle.js'` in main.js. The same principle works in bundle.js for defining bundle dependencies.
+With the symlinks in place import-statements and other path references to `oskari-frontend` will resolve to the appropriate directories. This means you can reference bundles in `oskari-frontend` repo with eg. `import 'oskari-loader!oskari-frontend/packages/statistics/statsgrid/bundle.js'` in main.js.
+
+If you wan't to build a custom bundle using oskari-frontend components, you can reference those by using `oskari-frontend` in bundle.js.
+```javascript
+scripts: [
+    {
+        type: "text/javascript",
+        src: "oskari-frontend/bundles/mapping/mapmodule/AbstractMapModule.js"
+    }
+]
+```
+
+#### Oskari frontend contrib
+
+`oskari-frontend-contrib` repository contains unofficial bundles and applications for Oskari created by the Oskari community. 
+If you want to use the contrib bundles, you should clone the contrib repo next to your application repository and take following steps:
+
+1. Clone the contrib repository: `git clone https://github.com/oskariorg/oskari-frontend-contrib.git`
+2. Go to `oskari-frontend-contrib` directory and run `npm install`.
+3. Edit your application's `package.json` by adding `"oskari-frontend-contrib": "file:../oskari-frontend-contrib"` to the dependencies section.
+4. Run `npm install` in your application directory.
+
+You can then reference contrib components using `oskari-frontend-contrib` the same way you can use `oskari-frontend`.
 
 ### Libraries
 
@@ -34,4 +74,23 @@ Before adding a library dependency (either under `libraries/` or via NPM), you s
 
 If the library isn't included in `oskari-frontend` repo, you can add it into this repo, either as dependency in package.json (preferred) or under `libraries/`. Dependencies under `libraries/` require a reference in bundle.js, NPM dependencies do not; just `import` in your code.
 
- 
+ ## Development server
+
+ Run `npm start` for development server with auto reload for JS and hot reload for SCSS.
+
+# Reporting issues
+All Oskari-related issues should be reported here: https://github.com/oskariorg/oskari-docs/issues
+
+### Known issues
+
+##### [WIP] Build fails on an error
+```
+npm ERR! path [...]
+npm ERR! code ENOENT
+npm ERR! errno -2
+npm ERR! syscall rename
+npm ERR! enoent ENOENT: no such file or directory, rename '[...]' -> '[...]'
+npm ERR! enoent This is related to npm not being able to find a file.
+npm ERR! enoent 
+```
+* This is most likely due to `package-lock.json` being present in your environment. Package locking mechanism doesn't work gracefully with symlinked node_modules (`oskari-frontend / oskari-frontend-contrib`). Remove `package-lock.json` for now.
