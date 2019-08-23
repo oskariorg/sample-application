@@ -1,6 +1,6 @@
 # Sample application
 
-This is a template that can be used as base for extending and customizing oskari-server.
+This is a template that can be used as base for building Oskari application frontend.
 
 Click the "Use this template" button on the repository to create a copy of the files under your username and start customizing it.
 
