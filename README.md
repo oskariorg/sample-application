@@ -20,9 +20,9 @@ In this model, it's left to the developer to checkout the correct branches/versi
 
 After you have done the basic setup (above), the application can be built directly from this repo with eg. `npm run build -- --env.appdef=1.0.0:applications`. The output will be under `dist/`. See the main [oskari-frontend repo](https://github.com/oskariorg/oskari-frontend#readme) for detailed instructions about the build parameters.
 
-### Running the dev-server
+## Building your own application
 
-`oskari-frontend` contains webpack dev server with hot deploy support. To start the server simply run `npm run start` in this repo.
+You may use this repository as a base for your own Oskari application frontend. For backend see https://github.com/oskariorg/sample-server-extension.
 
 ### Managing dependencies
 
@@ -44,8 +44,8 @@ If you wan't to build a custom bundle using oskari-frontend components, you can 
 
 #### Oskari frontend contrib
 
-These are unofficial bundles for Oskari created by the Oskari community. 
-If you want to use the contrib bundles, you should clone the contrib repo next to your application repository.
+`oskari-frontend-contrib` repository contains unofficial bundles and applications for Oskari created by the Oskari community. 
+If you want to use the contrib bundles, you should clone the contrib repo next to your application repository and take following steps:
 
 1. Clone the contrib repository: `git clone https://github.com/oskariorg/oskari-frontend-contrib.git`
 2. Go to `oskari-frontend-contrib` directory and run `npm install`.
@@ -60,4 +60,11 @@ Before adding a library dependency (either under `libraries/` or via NPM), you s
 
 If the library isn't included in `oskari-frontend` repo, you can add it into this repo, either as dependency in package.json (preferred) or under `libraries/`. Dependencies under `libraries/` require a reference in bundle.js, NPM dependencies do not; just `import` in your code.
 
- 
+### Known issues
+
+WIP: Build fails with `ENOENT: no such file or directory... This is related to npm not being able to find a file.`
+* This is most likely due to `package-lock.json` being present in your environment. Package locking mechanism doesn't work gracefully with symlinked node_modules (`oskari-frontend / oskari-frontend-contrib`). Remove `package-lock.json` for now.
+
+ ## Development server
+
+ Run `npm start` for development server with auto reload for JS and hot reload for SCSS.
