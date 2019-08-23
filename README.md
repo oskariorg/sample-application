@@ -1,6 +1,10 @@
 # Sample application
 
-Sample frontend for Oskari map application. Site visible in dev.oskari.org
+This is a template that can be used as base for extending and customizing oskari-server.
+
+Click the "Use this template" button on the repository to create a copy of the files under your username and start customizing it.
+
+This application can be seen in http://dev.oskari.org.
 
 ## Setup
 
@@ -60,11 +64,14 @@ Before adding a library dependency (either under `libraries/` or via NPM), you s
 
 If the library isn't included in `oskari-frontend` repo, you can add it into this repo, either as dependency in package.json (preferred) or under `libraries/`. Dependencies under `libraries/` require a reference in bundle.js, NPM dependencies do not; just `import` in your code.
 
+ ## Development server
+
+ Run `npm start` for development server with auto reload for JS and hot reload for SCSS.
+
+# Reporting issues
+All Oskari-related issues should be reported here: https://github.com/oskariorg/oskari-docs/issues
+
 ### Known issues
 
 WIP: Build fails with `ENOENT: no such file or directory... This is related to npm not being able to find a file.`
 * This is most likely due to `package-lock.json` being present in your environment. Package locking mechanism doesn't work gracefully with symlinked node_modules (`oskari-frontend / oskari-frontend-contrib`). Remove `package-lock.json` for now.
-
- ## Development server
-
- Run `npm start` for development server with auto reload for JS and hot reload for SCSS.
