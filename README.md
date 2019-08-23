@@ -6,6 +6,8 @@ Click the "Use this template" button on the repository to create a copy of the f
 
 This application can be seen in http://dev.oskari.org.
 
+For backend see https://github.com/oskariorg/sample-server-extension.
+
 ## Setup
 
 This repository and the main oskari-frontend repository should be located side by side on your filesystem. Here are the steps to setup the build environment:
@@ -21,8 +23,6 @@ Running `npm install` in this repo will create symlinks to the `oskari-frontend`
 In this model, it's left to the developer to checkout the correct branches/versions of the above repos.
 
 ## Creating your own Oskari application
-
-You may use this repository as a base for your own Oskari application frontend. For backend see https://github.com/oskariorg/sample-server-extension.
 
 After you have done the basic setup (above), the application can be built directly from this repo with eg. `npm run build -- --env.appdef=1.0.0:applications`. The output will be under `dist/`.
 
