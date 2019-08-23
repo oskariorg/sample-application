@@ -1,6 +1,6 @@
 # Sample application
 
-Sample frontend for Oskari map application. Running at demo.oskari.org.
+Sample frontend for Oskari map application. Site visible in dev.oskari.org
 
 ## Setup
 
@@ -18,7 +18,7 @@ In this model, it's left to the developer to checkout the correct branches/versi
 
 ## Building
 
-After you have done the basic setup (above), the application can be built directly from this repo with eg. `npm run build -- --env.appdef=1.53:applications`. The output will be under `dist/`. See the main [oskari-frontend repo](https://github.com/oskariorg/oskari-frontend#readme) for detailed instructions about the build parameters.
+After you have done the basic setup (above), the application can be built directly from this repo with eg. `npm run build -- --env.appdef=1.0.0:applications`. The output will be under `dist/`. See the main [oskari-frontend repo](https://github.com/oskariorg/oskari-frontend#readme) for detailed instructions about the build parameters.
 
 ### Running the dev-server
 
@@ -26,7 +26,33 @@ After you have done the basic setup (above), the application can be built direct
 
 ### Managing dependencies
 
-With the symlinks in place import-statements and other path references to `oskari-frontend` will resolve to the appropriate directories. This means you can reference bundles in `oskari-frontend` repo with eg. `import 'oskari-loader!oskari-frontend/packages/statistics/statsgrid/bundle.js'` in main.js. The same principle works in bundle.js for defining bundle dependencies.
+With the symlinks in place import-statements and other path references to `oskari-frontend` will resolve to the appropriate directories. This means you can reference bundles in `oskari-frontend` repo with eg. `import 'oskari-loader!oskari-frontend/packages/statistics/statsgrid/bundle.js'` in main.js.
+
+If you wan't to build a custom bundle using oskari-frontend components, you can reference those by using `oskari-frontend` in bundle.js.
+```
+...
+    source: {
+        scripts: [
+            {
+                type: "text/javascript",
+                src: "oskari-frontend/bundles/mapping/mapmodule/AbstractMapModule.js"
+            },
+        ]
+    }
+...
+```
+
+#### Oskari frontend contrib
+
+These are unofficial bundles for Oskari created by the Oskari community. 
+If you want to use the contrib bundles, you should clone the contrib repo next to your application repository.
+
+1. Clone the contrib repository: `git clone https://github.com/oskariorg/oskari-frontend-contrib.git`
+2. Go to `oskari-frontend-contrib` directory and run `npm install`.
+3. Edit your application's `package.json` by adding `"oskari-frontend-contrib": "file:../oskari-frontend-contrib"` to the dependencies section.
+4. Run `npm install` in your application directory.
+
+You can then reference contrib components using `oskari-frontend-contrib` the same way you can use `oskari-frontend`.
 
 ### Libraries
 

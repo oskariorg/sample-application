@@ -1,7 +1,7 @@
 {
   "name": "sample-application",
   "version": "1.0.0",
-  "description": "Example Oskari application frontend used in demo.oskari.org.",
+  "description": "Example Oskari application frontend. Site is visible in dev.oskari.org.",
   "keywords": [
     "Oskari"
   ],
