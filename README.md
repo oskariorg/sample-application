@@ -28,7 +28,7 @@ See the main [oskari-frontend repo](https://github.com/oskariorg/oskari-frontend
 
 ### App composition
 
-An Oskari frontend application consists of bundles that are defined in the `main.js` for each app (an example can be found under applications/geoportal). Only bundles referenced here can be instantiated at runtime.
+An Oskari frontend application consists of bundles that are defined in the `main.js` for each app (an example can be found [here](../master/applications/geoportal/main.js)). Only bundles referenced here can be instantiated at runtime.
 
 The applications use oskari-frontend framework's Webpack to create builds. The framework introduces loaders that can be used for importing Oskari bundles.
 
