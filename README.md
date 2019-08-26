@@ -86,16 +86,40 @@ Note! Requires (GraphicsMagick)[http://www.graphicsmagick.org/] to be installed 
 Note! You must first run a production build for the application to create the corresponding dist-folder. With the example command the sprite will be generated under the `dist\1.53.0\servlet` folder as `icons.png` and `icons.css`.\
 Note! To use the customized icons set your HTML (JSP) on the oskari-server need to link the icons.css under the application folder (default JSP links it from under oskari-frontend/resources/icons.css).
 
- ## Development server
+## Development server
 
- Run `npm start` for development server with auto reload for JS and hot reload for SCSS.
+Run `npm start` for development server with auto reload for JS and hot reload for SCSS.
 
 # Reporting issues
 All Oskari-related issues should be reported here: https://github.com/oskariorg/oskari-docs/issues
 
-### Known issues
+### FAQ
 
-##### [WIP] Build fails on an error
+#### "Out of memory" error when running Webpack
+
+If you get an error when running the build like  "FATAL ERROR: Committing semi space failed. Allocation failed - process out of memory" or "FATAL ERROR: CALL_AND_RETRY_LAST Allocation failed - JavaScript heap out of memory" you need to configure some more memory for the node-process.
+
+In linux you can use:
+
+    export NODE_OPTIONS=--max_old_space_size=4096
+    npm run build -- --env.appdef=1.53.0:applications
+
+Or in Windows:
+
+    set NODE_OPTIONS=--max_old_space_size=4096 && npm run build -- --env.appdef=1.53.0:applications
+
+#### Production build "freezes"
+
+CPU usage of the computer shows nothing is happening, but the bash/cmd is still executing the build command. Try setting "parallel" to false on UglifyJsPlugin configuration in webpack.config.js:
+
+    new UglifyJsPlugin({
+        sourceMap: true,
+        parallel: false
+    })
+
+
+#### Build fails on an error
+
 ```
 npm ERR! path [...]
 npm ERR! code ENOENT
@@ -105,4 +129,5 @@ npm ERR! enoent ENOENT: no such file or directory, rename '[...]' -> '[...]'
 npm ERR! enoent This is related to npm not being able to find a file.
 npm ERR! enoent 
 ```
-* This is most likely due to `package-lock.json` being present in your environment. Package locking mechanism doesn't work gracefully with symlinked node_modules (`oskari-frontend / oskari-frontend-contrib`). Remove `package-lock.json` for now.
+
+This is most likely due to `package-lock.json` being present in your environment. Package locking mechanism doesn't work gracefully with symlinked node_modules (`oskari-frontend / oskari-frontend-contrib`). Remove `package-lock.json` for now.
