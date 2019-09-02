@@ -103,11 +103,11 @@ If you get an error when running the build like  "FATAL ERROR: Committing semi s
 In linux you can use:
 
     export NODE_OPTIONS=--max_old_space_size=4096
-    npm run build -- --env.appdef=1.49.0:applications/sample/
+    npm run build -- --env.appdef=1.49.0:applications/
 
 Or in Windows:
 
-    set NODE_OPTIONS=--max_old_space_size=4096 && npm run build -- --env.appdef=1.49.0:applications/sample/
+    set NODE_OPTIONS=--max_old_space_size=4096 && npm run build -- --env.appdef=1.49.0:applications/
 
 ##### Production build "freezes"
 
