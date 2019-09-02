@@ -83,7 +83,7 @@ After running the production build it's possible to create a customized set of i
     npm run sprite -- 1.0.0:applications/geoportal
 
 Note! Requires (GraphicsMagick)[http://www.graphicsmagick.org/] to be installed on the server and the "gm" command to be usable on the cmd/bash.\
-Note! You must first run a production build for the application to create the corresponding dist-folder. With the example command the sprite will be generated under the `dist\1.0.0\servlet` folder as `icons.png` and `icons.css`.\
+Note! You must first run a production build for the application to create the corresponding dist-folder. With the example command the sprite will be generated under the `dist\1.0.0\geoportal` folder as `icons.png` and `icons.css`.\
 Note! To use the customized icons set your HTML (JSP) on the oskari-server need to link the icons.css under the application folder (default JSP links it from under oskari-frontend/resources/icons.css).
 
 ## Development server
