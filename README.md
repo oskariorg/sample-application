@@ -1,6 +1,6 @@
 # ![alt text](../master/applications/geoportal/logo.png "Oskari") Sample application
 
-This is a template that can be used as base for building Oskari application frontend.
+This is an example that can be used as a template for building Oskari application frontend.
 
 Click the "Use this template" button on the repository to create a copy of the files under your username and start customizing it.
 
@@ -80,10 +80,10 @@ It's possible to override any icon in `oskari-frontend/resources/icons` with app
 
 After running the production build it's possible to create a customized set of icons for the application by running a command `npm run sprite -- [version]:[application path]` like
 
-    npm run sprite -- 1.53.0:applications/geoportal
+    npm run sprite -- 1.0.0:applications/geoportal
 
 Note! Requires (GraphicsMagick)[http://www.graphicsmagick.org/] to be installed on the server and the "gm" command to be usable on the cmd/bash.\
-Note! You must first run a production build for the application to create the corresponding dist-folder. With the example command the sprite will be generated under the `dist\1.53.0\servlet` folder as `icons.png` and `icons.css`.\
+Note! You must first run a production build for the application to create the corresponding dist-folder. With the example command the sprite will be generated under the `dist\1.0.0\servlet` folder as `icons.png` and `icons.css`.\
 Note! To use the customized icons set your HTML (JSP) on the oskari-server need to link the icons.css under the application folder (default JSP links it from under oskari-frontend/resources/icons.css).
 
 ## Development server
@@ -102,11 +102,11 @@ If you get an error when running the build like  "FATAL ERROR: Committing semi s
 In linux you can use:
 
     export NODE_OPTIONS=--max_old_space_size=4096
-    npm run build -- --env.appdef=1.53.0:applications
+    npm run build -- --env.appdef=1.0.0:applications
 
 Or in Windows:
 
-    set NODE_OPTIONS=--max_old_space_size=4096 && npm run build -- --env.appdef=1.53.0:applications
+    set NODE_OPTIONS=--max_old_space_size=4096 && npm run build -- --env.appdef=1.0.0:applications
 
 #### Production build "freezes"
 
@@ -131,3 +131,26 @@ npm ERR! enoent
 ```
 
 This is most likely due to `package-lock.json` being present in your environment. Package locking mechanism doesn't work gracefully with symlinked node_modules (`oskari-frontend / oskari-frontend-contrib`). Remove `package-lock.json` for now.
+
+##### "Out of memory" error when running Webpack
+
+If you get an error when running the build like  "FATAL ERROR: Committing semi space failed. Allocation failed - process out of memory" or "FATAL ERROR: CALL_AND_RETRY_LAST Allocation failed - JavaScript heap out of memory" you need to configure some more memory for the node-process.
+
+In linux you can use:
+
+    export NODE_OPTIONS=--max_old_space_size=4096
+    npm run build -- --env.appdef=1.0.0:applications/sample/
+
+Or in Windows:
+
+    set NODE_OPTIONS=--max_old_space_size=4096 && npm run build -- --env.appdef=1.0.0:applications/sample/
+
+##### Production build "freezes"
+
+CPU usage of the computer shows nothing is happening, but the bash/cmd is still executing the build command. Try setting "parallel" to false on UglifyJsPlugin configuration in webpack.config.js:
+
+    new UglifyJsPlugin({
+        sourceMap: true,
+        parallel: false
+    })
+>>>>>>> 02ac03a1c1b8ae9bb194c5e59a4253d46a39d930
