@@ -94,3 +94,26 @@ npm ERR! enoent This is related to npm not being able to find a file.
 npm ERR! enoent 
 ```
 * This is most likely due to `package-lock.json` being present in your environment. Package locking mechanism doesn't work gracefully with symlinked node_modules (`oskari-frontend / oskari-frontend-contrib`). Remove `package-lock.json` for now.
+
+
+##### "Out of memory" error when running Webpack
+
+If you get an error when running the build like  "FATAL ERROR: Committing semi space failed. Allocation failed - process out of memory" or "FATAL ERROR: CALL_AND_RETRY_LAST Allocation failed - JavaScript heap out of memory" you need to configure some more memory for the node-process.
+
+In linux you can use:
+
+    export NODE_OPTIONS=--max_old_space_size=4096
+    npm run build -- --env.appdef=1.49.0:applications/sample/
+
+Or in Windows:
+
+    set NODE_OPTIONS=--max_old_space_size=4096 && npm run build -- --env.appdef=1.49.0:applications/sample/
+
+##### Production build "freezes"
+
+CPU usage of the computer shows nothing is happening, but the bash/cmd is still executing the build command. Try setting "parallel" to false on UglifyJsPlugin configuration in webpack.config.js:
+
+    new UglifyJsPlugin({
+        sourceMap: true,
+        parallel: false
+    })
