@@ -9,7 +9,7 @@
     "oskari-frontend": "file:../oskari-frontend"
   },
   "scripts": {
-    "build": "node ./node_modules/oskari-frontend/node_modules/webpack/bin/webpack.js --config ./node_modules/oskari-frontend/webpack.config.js --mode production --progress --env.appdef=devapp:applications",
+    "build": "node ./node_modules/oskari-frontend/node_modules/webpack/bin/webpack.js --config ./node_modules/oskari-frontend/webpack.config.js --mode production --progress --env.appdef=applications",
     "start": "node ./node_modules/oskari-frontend/node_modules/webpack-dev-server/bin/webpack-dev-server.js --config ./node_modules/oskari-frontend/webpack.config.js --hot --env.appdef=devapp:applications",
     "sprite": "node ./node_modules/oskari-frontend/webpack/sprite.js"
   },
