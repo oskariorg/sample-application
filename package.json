@@ -14,11 +14,11 @@
     "dev-mode:on": "npm run dev-mode -- enabled",
     "dev-mode:disable": "npm run dev-mode:on && npm i oskariorg/oskari-frontend#develop",
     "dev-mode:enable": "npm run dev-mode:off && node ./node_modules/oskari-frontend/scripts/oskari-dev-mode-requirements && npm i ../oskari-frontend",
-    "build": "npm run dev-mode:off && webpack --config ./node_modules/oskari-frontend/webpack.config.js --mode production --progress --env.appdef=devapp:applications",
+    "build": "npm run dev-mode:off && webpack --config ./node_modules/oskari-frontend/webpack.config.js --mode production --progress --env.appdef=applications",
     "start": "npm run dev-mode:off && webpack-dev-server --config ./node_modules/oskari-frontend/webpack.config.js --hot --env.appdef=devapp:applications",
     "start:dev": "npm run dev-mode:on && node ./node_modules/oskari-frontend/node_modules/webpack-dev-server/bin/webpack-dev-server.js --config ./node_modules/oskari-frontend/webpack.config.js --hot --env.appdef=devapp:applications",
-    "build:dev": "npm run dev-mode:on && node ./node_modules/oskari-frontend/node_modules/webpack/bin/webpack.js --config ./node_modules/oskari-frontend/webpack.config.js --mode production --progress --env.appdef=devapp:applications",
-    "sprite": "node ./node_modules/oskari-frontend/webpack/sprite.js devapp:applications",
+    "build:dev": "npm run dev-mode:on && node ./node_modules/oskari-frontend/node_modules/webpack/bin/webpack.js --config ./node_modules/oskari-frontend/webpack.config.js --mode production --progress --env.appdef=applications",
+    "sprite": "node ./node_modules/oskari-frontend/webpack/sprite.js",
     "postinstall": "npm run dev-mode"
   },
   "repository": {

@@ -22,7 +22,7 @@ In this model, it's left to the developer to checkout the correct branches/versi
 
 ## Creating your own Oskari application
 
-After you have done the basic setup (above), the application can be built directly from this repo with eg. `npm run build -- --env.appdef=1.0.0:applications`. The output will be under `dist/`.
+After you have done the basic setup (above), the application can be built directly from this repo with eg. `npm run build`. The output will be under `dist/`.
 
 See the main [oskari-frontend repo](https://github.com/oskariorg/oskari-frontend#readme) for detailed instructions about the build parameters.
 
@@ -83,7 +83,7 @@ After running the production build it's possible to create a customized set of i
     npm run sprite -- 1.0.0:applications/geoportal
 
 Note! Requires (GraphicsMagick)[http://www.graphicsmagick.org/] to be installed on the server and the "gm" command to be usable on the cmd/bash.\
-Note! You must first run a production build for the application to create the corresponding dist-folder. With the example command the sprite will be generated under the `dist\1.0.0\servlet` folder as `icons.png` and `icons.css`.\
+Note! You must first run a production build for the application to create the corresponding dist-folder. With the example command the sprite will be generated under the `dist\1.0.0\geoportal` folder as `icons.png` and `icons.css`.\
 Note! To use the customized icons set your HTML (JSP) on the oskari-server need to link the icons.css under the application folder (default JSP links it from under oskari-frontend/resources/icons.css).
 
 ## Development server
@@ -102,11 +102,11 @@ If you get an error when running the build like  "FATAL ERROR: Committing semi s
 In linux you can use:
 
     export NODE_OPTIONS=--max_old_space_size=4096
-    npm run build -- --env.appdef=1.0.0:applications
+    npm run build
 
 Or in Windows:
 
-    set NODE_OPTIONS=--max_old_space_size=4096 && npm run build -- --env.appdef=1.0.0:applications
+    set NODE_OPTIONS=--max_old_space_size=4096 && npm run build
 
 #### Production build "freezes"
 
