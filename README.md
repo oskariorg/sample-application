@@ -11,14 +11,8 @@ This application can be seen in http://dev.oskari.org. For backend see https://g
 This repository and the main oskari-frontend repository should be located side by side on your filesystem. Here are the steps to setup the build environment:
 
 1. Make sure you have the command line programs `git`, and `node` version 8 or greater
-2. Clone the main frontend repository: `git clone https://github.com/oskariorg/oskari-frontend.git`
-3. Clone the application repository (this one): `git clone https://github.com/oskariorg/sample-application.git`
-    - Now we have directories `oskari-frontend` and `sample-application` side by side
-4. Run `npm install` in both above repo directories
-
-Running `npm install` in this repo will create symlinks to the `oskari-frontend` directory under node_modules.
-
-In this model, it's left to the developer to checkout the correct branches/versions of the above repos.
+2. Clone the application repository (this one): `git clone https://github.com/oskariorg/sample-application.git`
+3. Run `npm install`
 
 ## Creating your own Oskari application
 
@@ -56,6 +50,15 @@ scripts: [
 ]
 ```
 
+#### Oskari development mode
+
+Oskari development mode is useful when developing the Oskari framework. Since the framework doesn't contain an application by itself, the sample application can be used when developing new Oskari features.
+
+1. Clone `oskari-frontend` repository next to the application repository: `git clone https://github.com/oskariorg/oskari-frontend.git`
+2. Run `npm run dev-mode:enable` in the application repository.
+
+In this model, it's left to the developer to checkout the correct branches/versions of the `oskari-frontend` dependency.
+
 #### Oskari frontend contrib
 
 `oskari-frontend-contrib` repository contains unofficial bundles and applications for Oskari created by the Oskari community. 
@@ -80,7 +83,7 @@ It's possible to override any icon in `oskari-frontend/resources/icons` with app
 
 After running the production build it's possible to create a customized set of icons for the application by running a command `npm run sprite -- [version]:[application path]` like
 
-    npm run sprite -- 1.0.0:applications/geoportal
+    npm run sprite -- 1.0.0:applications
 
 Note! Requires (GraphicsMagick)[http://www.graphicsmagick.org/] to be installed on the server and the "gm" command to be usable on the cmd/bash.\
 Note! You must first run a production build for the application to create the corresponding dist-folder. With the example command the sprite will be generated under the `dist\1.0.0\geoportal` folder as `icons.png` and `icons.css`.\
