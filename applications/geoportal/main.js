@@ -25,7 +25,6 @@ import 'oskari-loader!oskari-frontend/packages/framework/featuredata2/bundle.js'
 
 import 'oskari-loader!oskari-frontend/packages/mapping/ol3/mapmyplaces/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/mapping/ol3/maparcgis/bundle.js';
-import 'oskari-loader!oskari-frontend/packages/mapping/ol3/mapwfs2/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/mapping/ol3/wfsvector/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/mapping/ol3/mapuserlayers/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/mapping/ol3/mapwmts/bundle.js';
