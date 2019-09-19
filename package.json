@@ -6,7 +6,7 @@
     "Oskari"
   ],
   "dependencies": {
-    "oskari-frontend": "git+https://git@github.com/oskariorg/oskari-frontend.git#1.53.0"
+    "oskari-frontend": "git+https://git@github.com/oskariorg/oskari-frontend.git#develop"
   },
   "scripts": {
     "dev-mode": "node ./node_modules/oskari-frontend/scripts/oskari-dev-mode",
