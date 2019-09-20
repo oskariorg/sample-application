@@ -8,7 +8,7 @@ This application can be seen in http://dev.oskari.org. For backend see https://g
 
 ## Setup
 
-This repository and the main oskari-frontend repository should be located side by side on your filesystem. Here are the steps to setup the build environment:
+Here are the steps to setup the build environment:
 
 1. Make sure you have the command line programs `git`, and `node` version 8 or greater
 2. Clone the application repository (this one): `git clone https://github.com/oskariorg/sample-application.git`
@@ -38,7 +38,7 @@ Bundles that are used only in a limited part of the app (for example admin tools
 
 ### Managing dependencies
 
-With the symlinks in place import-statements and other path references to `oskari-frontend` will resolve to the appropriate directories. This means you can reference bundles in `oskari-frontend` repo with eg. `import 'oskari-loader!oskari-frontend/packages/statistics/statsgrid/bundle.js'` in main.js.
+The application has `oskari-frontend` framework repository as dependency. This means you can reference bundles in `oskari-frontend` repo with eg. `import 'oskari-loader!oskari-frontend/packages/statistics/statsgrid/bundle.js'` in main.js.
 
 If you wan't to build a custom bundle using oskari-frontend components, you can reference those by using `oskari-frontend` in bundle.js.
 ```javascript

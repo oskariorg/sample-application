@@ -22,7 +22,7 @@
     "build:dev": "npm run dev-mode:on && node ./node_modules/oskari-frontend/node_modules/webpack/bin/webpack.js --config ./node_modules/oskari-frontend/webpack.config.js --mode production --progress --env.appdef=applications",
     "sprite": "node ./node_modules/oskari-frontend/webpack/sprite.js",
     "postinstall": "npm run dev-mode",
-    "storybook": "start-storybook"
+    "storybook": "npm run dev-mode:off && start-storybook"
   },
   "repository": {
     "type": "git",
