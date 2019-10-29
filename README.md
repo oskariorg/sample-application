@@ -133,3 +133,13 @@ npm ERR! enoent
 ```
 
 This is most likely due to `package-lock.json` being present in your environment. Package locking mechanism doesn't work gracefully with symlinked node_modules (`oskari-frontend / oskari-frontend-contrib`). Remove `package-lock.json` for now.
+
+## License
+ 
+This work is dual-licensed under MIT and [EUPL v1.1](https://joinup.ec.europa.eu/software/page/eupl/licence-eupl) 
+(any language version applies, English version is included in https://github.com/oskariorg/oskari-docs/blob/master/documents/LICENSE-EUPL.pdf).
+You can choose between one of them if you use this work.
+ 
+`SPDX-License-Identifier: MIT OR EUPL-1.1`
+
+Copyright (c) 2014-present National Land Survey of Finland
