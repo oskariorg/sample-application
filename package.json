@@ -6,7 +6,7 @@
     "Oskari"
   ],
   "dependencies": {
-    "oskari-frontend": "git+https://git@github.com/oskariorg/oskari-frontend.git#1.53.1"
+    "oskari-frontend": "git+https://git@github.com/oskariorg/oskari-frontend.git#1.54.0"
   },
   "scripts": {
     "dev-mode": "node ./node_modules/oskari-frontend/scripts/oskari-dev-mode",
@@ -22,7 +22,8 @@
     "build:dev": "npm run dev-mode:on && node ./node_modules/oskari-frontend/node_modules/webpack/bin/webpack.js --config ./node_modules/oskari-frontend/webpack.config.js --mode production --progress --env.appdef=applications",
     "sprite": "node ./node_modules/oskari-frontend/webpack/sprite.js",
     "postinstall": "npm run dev-mode",
-    "storybook": "start-storybook"
+    "test": "eslint --config ./node_modules/oskari-frontend/.eslintrc.js bundles",
+    "storybook": "npm run dev-mode:off && start-storybook"
   },
   "repository": {
     "type": "git",
