@@ -5,6 +5,17 @@ import 'oskari-loader!oskari-frontend/packages/framework/bundle/divmanazer/bundl
 
 import 'oskari-loader!oskari-frontend/packages/mapping/ol/mapmodule/bundle.js';
 
+import 'oskari-loader!oskari-frontend/packages/mapping/ol/mapwmts/bundle.js';
+import 'oskari-loader!oskari-frontend/packages/mapping/ol/maparcgis/bundle.js';
+import 'oskari-loader!oskari-frontend/packages/mapping/ol/wfsvector/bundle.js';
+import 'oskari-loader!oskari-frontend/packages/mapping/ol/mapmyplaces/bundle.js';
+import 'oskari-loader!oskari-frontend/packages/mapping/ol/mapuserlayers/bundle.js';
+import 'oskari-loader!oskari-frontend/packages/mapping/ol/drawtools/bundle.js';
+import 'oskari-loader!oskari-frontend/packages/mapping/ol/toolbar/bundle.js';
+import 'oskari-loader!oskari-frontend/packages/mapping/ol/infobox/bundle.js';
+import 'oskari-loader!oskari-frontend/packages/mapping/ol/heatmap/bundle.js';
+import 'oskari-loader!oskari-frontend/packages/mapping/ol/maprotator/bundle.js';
+
 import 'oskari-loader!oskari-frontend/packages/catalogue/metadatacatalogue/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/catalogue/bundle/metadataflyout/bundle.js';
 
@@ -22,17 +33,6 @@ import 'oskari-loader!oskari-frontend/packages/framework/bundle/search/bundle.js
 import 'oskari-loader!oskari-frontend/packages/framework/bundle/timeseries/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/framework/bundle/userguide/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/framework/featuredata2/bundle.js';
-
-import 'oskari-loader!oskari-frontend/packages/mapping/ol/mapmyplaces/bundle.js';
-import 'oskari-loader!oskari-frontend/packages/mapping/ol/maparcgis/bundle.js';
-import 'oskari-loader!oskari-frontend/packages/mapping/ol/wfsvector/bundle.js';
-import 'oskari-loader!oskari-frontend/packages/mapping/ol/mapuserlayers/bundle.js';
-import 'oskari-loader!oskari-frontend/packages/mapping/ol/mapwmts/bundle.js';
-import 'oskari-loader!oskari-frontend/packages/mapping/ol/drawtools/bundle.js';
-import 'oskari-loader!oskari-frontend/packages/mapping/ol/toolbar/bundle.js';
-import 'oskari-loader!oskari-frontend/packages/mapping/ol/infobox/bundle.js';
-import 'oskari-loader!oskari-frontend/packages/mapping/ol/heatmap/bundle.js';
-import 'oskari-loader!oskari-frontend/packages/mapping/ol/maprotator/bundle.js';
 
 import 'oskari-loader!oskari-frontend/packages/statistics/statsgrid/bundle.js';
 
