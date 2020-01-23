@@ -3,7 +3,12 @@ import 'oskari-loader!oskari-frontend/packages/framework/bundle/oskariui/bundle.
 import 'oskari-loader!oskari-frontend/packages/framework/bundle/ui-components/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/framework/bundle/divmanazer/bundle.js';
 
-import 'oskari-loader!oskari-frontend/packages/mapping/ol/mapmodule/bundle.js';
+// 3D mapmodule
+import 'oskari-loader!oskari-frontend/packages/mapping/olcs/mapmodule/bundle.js';
+import 'oskari-loader!oskari-frontend/packages/mapping/olcs/map3dtiles/bundle.js';
+import 'oskari-loader!oskari-frontend/packages/mapping/olcs/shadowplugin/bundle.js';
+import 'oskari-loader!oskari-frontend/packages/mapping/camera-controls-3d/bundle.js';
+import 'oskari-loader!oskari-frontend/packages/mapping/dimension-change/bundle.js';
 
 import 'oskari-loader!oskari-frontend/packages/mapping/ol/mapwmts/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/mapping/ol/maparcgis/bundle.js';
@@ -35,10 +40,6 @@ import 'oskari-loader!oskari-frontend/packages/framework/bundle/userguide/bundle
 import 'oskari-loader!oskari-frontend/packages/framework/featuredata2/bundle.js';
 
 import 'oskari-loader!oskari-frontend/packages/statistics/statsgrid/bundle.js';
-
-// 3D support
-import 'oskari-loader!oskari-frontend/packages/mapping/olcs/map3dtiles/bundle.js'
-import 'oskari-loader!oskari-frontend/packages/mapping/dimension-change/bundle.js';
 
 import 'oskari-loader!../../packages/sample/bundle/sample-info/bundle.js';
 
