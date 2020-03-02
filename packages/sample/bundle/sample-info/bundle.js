@@ -40,6 +40,10 @@ function() {
             "lang" : "en",
             "type" : "text/javascript",
             "src" : "../../../../bundles/sample/sample-info/resources/locale/en.js"
+        }, {
+            "lang" : "is",
+            "type" : "text/javascript",
+            "src" : "../../../../bundles/sample/sample-info/resources/locale/is.js"
         }]
     },
     "bundle" : {
