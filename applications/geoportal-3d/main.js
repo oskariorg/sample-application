@@ -21,9 +21,6 @@ import 'oskari-loader!oskari-frontend/packages/mapping/ol/infobox/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/mapping/ol/heatmap/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/mapping/ol/maprotator/bundle.js';
 
-import 'oskari-loader!oskari-frontend/packages/catalogue/metadatacatalogue/bundle.js';
-import 'oskari-loader!oskari-frontend/packages/catalogue/bundle/metadataflyout/bundle.js';
-
 import 'oskari-loader!oskari-frontend/packages/framework/bundle/backendstatus/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/framework/bundle/coordinatetool/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/framework/bundle/guidedtour/bundle.js';
