@@ -19,13 +19,9 @@ import 'oskari-loader!oskari-frontend/packages/mapping/ol/maprotator/bundle.js';
 import 'oskari-lazy-loader?metadatacatalogue!oskari-frontend/packages/catalogue/metadatacatalogue/bundle.js';
 import 'oskari-lazy-loader?metadataflyout!oskari-frontend/packages/catalogue/bundle/metadataflyout/bundle.js';
 
-import 'oskari-loader!oskari-frontend/packages/framework/bundle/backendstatus/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/framework/bundle/coordinatetool/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/framework/bundle/guidedtour/bundle.js';
-
-// only one of these will be shown based on the app
-import 'oskari-lazy-loader?layerlist!oskari-frontend/packages/framework/layerlist/bundle.js';
-import 'oskari-lazy-loader?hierarchical-layerlist!oskari-frontend/packages/framework/bundle/hierarchical-layerlist/bundle.js';
+import 'oskari-loader!oskari-frontend/packages/framework/layerlist/bundle.js';
 
 import 'oskari-loader!oskari-frontend/packages/framework/bundle/maplegend/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/framework/bundle/myplaces3/bundle.js';
@@ -47,7 +43,6 @@ import 'oskari-loader!oskari-frontend/packages/mapping/dimension-change/bundle.j
 import 'oskari-loader!../../packages/sample/bundle/sample-info/bundle.js';
 
 import 'oskari-lazy-loader?printout!oskari-frontend/packages/framework/bundle/printout/bundle.js';
-import 'oskari-lazy-loader?postprocessor!oskari-frontend/packages/framework/bundle/postprocessor/bundle.js';
 import 'oskari-lazy-loader?admin-layereditor!oskari-frontend/packages/admin/bundle/admin-layereditor/bundle.js';
 import 'oskari-lazy-loader?admin-layerrights!oskari-frontend/packages/framework/bundle/admin-layerrights/bundle.js';
 
