@@ -20,6 +20,7 @@ import 'oskari-loader!oskari-frontend/packages/mapping/ol/toolbar/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/mapping/ol/infobox/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/mapping/ol/heatmap/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/mapping/ol/maprotator/bundle.js';
+import 'oskari-loader!oskari-frontend/packages/mapping/ol/userstyle/bundle.js';
 
 import 'oskari-loader!oskari-frontend/packages/framework/bundle/coordinatetool/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/framework/bundle/guidedtour/bundle.js';
