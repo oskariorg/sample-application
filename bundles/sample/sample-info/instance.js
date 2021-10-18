@@ -8,9 +8,11 @@ Oskari.clazz.defineES('Oskari.sample.info.SampleInfoBundleInstance', class Sampl
         this.__name = 'SampleInfoBundleInstance';
         this.loc = Oskari.getMsg.bind(null, 'sample-info');
     }
+
     _startImpl (sandbox) {
         this._registerForGuidedTour();
     }
+
     /**
      * @method _registerForGuidedTour
      * Registers bundle for guided tour help functionality. Waits for guided tour load if not found
@@ -43,5 +45,5 @@ Oskari.clazz.defineES('Oskari.sample.info.SampleInfoBundleInstance', class Sampl
         }
     }
 }, {
-    'protocol': ['Oskari.bundle.BundleInstance', 'Oskari.mapframework.module.Module']
+    protocol: ['Oskari.bundle.BundleInstance', 'Oskari.mapframework.module.Module']
 });

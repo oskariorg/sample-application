@@ -5,4 +5,4 @@ import { Button } from 'oskari-ui';
 storiesOf('Sample Application', module)
     .add('with text', () => (
         <Button>Hello from sample application</Button>
-    ))
+    ));
