@@ -15,6 +15,7 @@ import 'oskari-loader!oskari-frontend/packages/mapping/ol/drawtools/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/framework/bundle/coordinatetool/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/framework/bundle/publishedstatehandler/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/framework/bundle/rpc/bundle.js';
+import 'oskari-loader!oskari-frontend/packages/framework/bundle/maplegend/bundle.js';
 
 import 'oskari-lazy-loader?featuredata2!oskari-frontend/packages/framework/featuredata2/bundle.js';
 import 'oskari-lazy-loader?statsgrid!oskari-frontend/packages/statistics/statsgrid/bundle.js';
