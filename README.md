@@ -10,7 +10,7 @@ This application can be seen in http://dev.oskari.org. For backend see https://g
 
 Here are the steps to setup the build environment:
 
-1. Make sure you have the command line programs `git`, and `node` version 8 or greater
+1. Make sure you have the command line programs `git`, and `node` version 10.12.0 or greater (recommended 12)
 2. Clone the application repository (this one): `git clone https://github.com/oskariorg/sample-application.git`
 3. Run `npm install`
 
