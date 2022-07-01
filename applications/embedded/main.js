@@ -23,4 +23,6 @@ import 'oskari-lazy-loader?routingService!oskari-frontend/packages/framework/bun
 import 'oskari-lazy-loader?maprotator!oskari-frontend/packages/mapping/ol/maprotator/bundle.js';
 import 'oskari-lazy-loader?timeseries!oskari-frontend/packages/framework/bundle/timeseries/bundle.js';
 
+import 'oskari-lazy-loader?metadataflyout!oskari-frontend/packages/catalogue/bundle/metadataflyout/bundle.js';
+
 import './css/overwritten.css';
