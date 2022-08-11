@@ -3,7 +3,14 @@ jQuery(document).ready(function() {
         var service = Oskari.getSandbox().getService('Oskari.map.DataProviderInfoService');
         if (service) {
             service.addGroup('osm.nominatim', 'Search', [
-                { 'id': 'nominatim.attribution', 'name': 'The search functionality uses OpenStreetMap Nominatim, licensed under ODbL <a href="https://www.openstreetmap.org/copyright" target="_blank" ref="noopener">© OpenStreetMap contributors</a>' }
+                {
+                    'id': 'nominatim.attribution',
+                    'name': 'The search functionality uses OpenStreetMap Nominatim, licensed under ODbL',
+                    'source': {
+                        'name': '© OpenStreetMap contributors',
+                        'url': 'https://www.openstreetmap.org/copyright'
+                    }
+                }
             ]);
         }
     }
