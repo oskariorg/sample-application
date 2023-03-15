@@ -29,7 +29,7 @@ import 'oskari-loader!oskari-frontend/packages/framework/bundle/myplaces3/bundle
 import 'oskari-loader!oskari-frontend/packages/framework/bundle/myplacesimport/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/framework/bundle/publisher2/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/framework/bundle/statehandler/bundle.js';
-import 'oskari-loader!oskari-frontend/packages/framework/bundle/search/bundle.js';
+import 'oskari-lazy-loader?search!oskari-frontend/packages/framework/bundle/search/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/framework/bundle/timeseries/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/framework/bundle/userguide/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/framework/featuredata2/bundle.js';
