@@ -33,6 +33,7 @@ import 'oskari-lazy-loader?search!oskari-frontend/packages/framework/bundle/sear
 import 'oskari-loader!oskari-frontend/packages/framework/bundle/timeseries/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/framework/bundle/userguide/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/framework/featuredata2/bundle.js';
+import 'oskari-lazy-loader?language-selector!oskari-frontend/packages/framework/bundle/language-selector/bundle.js';
 
 import 'oskari-loader!oskari-frontend/packages/statistics/statsgrid/bundle.js';
 
