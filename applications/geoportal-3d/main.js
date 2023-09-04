@@ -28,7 +28,7 @@ import 'oskari-loader!oskari-frontend/packages/framework/layerlist/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/framework/bundle/maplegend/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/framework/bundle/myplaces3/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/framework/bundle/myplacesimport/bundle.js';
-import 'oskari-loader!oskari-frontend/packages/framework/bundle/personaldata/bundle.js';
+import 'oskari-loader!oskari-frontend/bundles/framework/mydata/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/framework/bundle/publisher2/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/framework/bundle/statehandler/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/framework/bundle/search/bundle.js';
