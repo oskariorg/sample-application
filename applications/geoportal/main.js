@@ -49,8 +49,7 @@ import 'oskari-lazy-loader?personaldata!oskari-frontend/packages/framework/bundl
 import 'oskari-lazy-loader?mydata!oskari-frontend/bundles/framework/mydata/bundle.js';
 import 'oskari-lazy-loader?printout!oskari-frontend/packages/framework/bundle/printout/bundle.js';
 import 'oskari-lazy-loader?admin-layereditor!oskari-frontend/packages/admin/bundle/admin-layereditor/bundle.js';
-import 'oskari-lazy-loader?admin-layerrights!oskari-frontend/packages/framework/bundle/admin-layerrights/bundle.js';
-
+import 'oskari-lazy-loader?admin-permissions!oskari-frontend/packages/admin/bundle/admin-permissions/bundle.js';
 import 'oskari-lazy-loader?admin!oskari-frontend/packages/admin/bundle/admin/bundle.js';
 import 'oskari-lazy-loader?metrics!oskari-frontend/packages/admin/bundle/metrics/bundle.js';
 import 'oskari-lazy-loader?appsetup!oskari-frontend/packages/admin/bundle/appsetup/bundle.js';
