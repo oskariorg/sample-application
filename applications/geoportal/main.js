@@ -38,6 +38,7 @@ import 'oskari-lazy-loader?featuredata!oskari-frontend/packages/framework/bundle
 import 'oskari-lazy-loader?language-selector!oskari-frontend/packages/framework/bundle/language-selector/bundle.js';
 
 import 'oskari-loader!oskari-frontend/packages/statistics/statsgrid/bundle.js';
+import 'oskari-loader!oskari-frontend/bundles/framework/mydata/bundle.js';
 
 // 3D support
 import 'oskari-loader!oskari-frontend/packages/mapping/olcs/map3dtiles/bundle.js';
@@ -45,12 +46,9 @@ import 'oskari-loader!oskari-frontend/packages/mapping/dimension-change/bundle.j
 
 import 'oskari-loader!../../packages/sample/bundle/sample-info/bundle.js';
 
-import 'oskari-lazy-loader?personaldata!oskari-frontend/packages/framework/bundle/personaldata/bundle.js';
-import 'oskari-lazy-loader?mydata!oskari-frontend/bundles/framework/mydata/bundle.js';
 import 'oskari-lazy-loader?printout!oskari-frontend/packages/framework/bundle/printout/bundle.js';
 import 'oskari-lazy-loader?admin-layereditor!oskari-frontend/packages/admin/bundle/admin-layereditor/bundle.js';
-import 'oskari-lazy-loader?admin-layerrights!oskari-frontend/packages/framework/bundle/admin-layerrights/bundle.js';
-
+import 'oskari-lazy-loader?admin-permissions!oskari-frontend/packages/admin/bundle/admin-permissions/bundle.js';
 import 'oskari-lazy-loader?admin!oskari-frontend/packages/admin/bundle/admin/bundle.js';
 import 'oskari-lazy-loader?metrics!oskari-frontend/packages/admin/bundle/metrics/bundle.js';
 import 'oskari-lazy-loader?appsetup!oskari-frontend/packages/admin/bundle/appsetup/bundle.js';
