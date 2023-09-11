@@ -26,19 +26,21 @@ import 'oskari-loader!oskari-frontend/packages/framework/bundle/coordinatetool/b
 import 'oskari-loader!oskari-frontend/packages/framework/bundle/guidedtour/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/framework/layerlist/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/framework/bundle/maplegend/bundle.js';
-import 'oskari-loader!oskari-frontend/packages/framework/bundle/myplaces3/bundle.js';
-import 'oskari-loader!oskari-frontend/packages/framework/bundle/myplacesimport/bundle.js';
-import 'oskari-loader!oskari-frontend/bundles/framework/mydata/bundle.js';
-import 'oskari-loader!oskari-frontend/packages/framework/bundle/publisher2/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/framework/bundle/statehandler/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/framework/bundle/search/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/framework/bundle/timeseries/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/framework/bundle/userguide/bundle.js';
-import 'oskari-loader!oskari-frontend/packages/framework/featuredata2/bundle.js';
-
-import 'oskari-loader!oskari-frontend/packages/statistics/statsgrid/bundle.js';
 
 import 'oskari-loader!../../packages/sample/bundle/sample-info/bundle.js';
+
+// mobile tuning
+import 'oskari-lazy-loader?myplaces3!oskari-loader!oskari-frontend/packages/framework/bundle/myplaces3/bundle.js';
+import 'oskari-lazy-loader?myplacesimport!oskari-frontend/packages/framework/bundle/myplacesimport/bundle.js';
+import 'oskari-lazy-loader?mydata!oskari-frontend/bundles/framework/mydata/bundle.js';
+import 'oskari-lazy-loader?publisher2!oskari-frontend/packages/framework/bundle/publisher2/bundle.js';
+import 'oskari-lazy-loader?statsgrid!oskari-frontend/packages/statistics/statsgrid/bundle.js';
+import 'oskari-lazy-loader?featuredata2!oskari-frontend/packages/framework/featuredata2/bundle.js';
+// end mobile tuning
 
 import 'oskari-lazy-loader?printout!oskari-frontend/packages/framework/bundle/printout/bundle.js';
 import 'oskari-lazy-loader?admin-layereditor!oskari-frontend/packages/admin/bundle/admin-layereditor/bundle.js';
