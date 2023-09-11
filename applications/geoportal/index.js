@@ -17,5 +17,5 @@ jQuery(document).ready(function() {
     function onError () {
         jQuery('#mapdiv').append('Unable to start');
     }
-    Oskari.app.loadAppSetup(ajaxUrl + 'action_route=GetAppSetup', window.controlParams, onError, onSuccess);
+    Oskari.app.loadAppSetup(ajaxUrl + 'action_route=GetAppSetup&mobile=' + Oskari.util.isMobile(), window.controlParams, onError, onSuccess);
 });
