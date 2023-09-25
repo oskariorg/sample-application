@@ -17,7 +17,7 @@ import 'oskari-loader!oskari-frontend/packages/mapping/ol/heatmap/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/mapping/ol/maprotator/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/mapping/ol/userstyle/bundle.js';
 
-import 'oskari-lazy-loader?metadatacatalogue!oskari-frontend/packages/catalogue/metadatacatalogue/bundle.js';
+import 'oskari-lazy-loader?metadatasearch!oskari-frontend/packages/catalogue/metadatasearch/bundle.js';
 import 'oskari-lazy-loader?metadataflyout!oskari-frontend/packages/catalogue/bundle/metadataflyout/bundle.js';
 
 import 'oskari-loader!oskari-frontend/packages/framework/bundle/coordinatetool/bundle.js';
@@ -29,9 +29,7 @@ import 'oskari-loader!oskari-frontend/packages/framework/bundle/statehandler/bun
 import 'oskari-lazy-loader?search!oskari-frontend/packages/framework/bundle/search/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/framework/bundle/timeseries/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/framework/bundle/userguide/bundle.js';
-// featuredata2 is jQuery impl, featuredata is React impl (React version is used on 3067 app while others still use the old one)
-import 'oskari-lazy-loader?featuredata2!oskari-frontend/packages/framework/featuredata2/bundle.js';
-import 'oskari-lazy-loader?featuredata!oskari-frontend/packages/framework/bundle/featuredata/bundle.js';
+import 'oskari-lazy-loader?featuredata!oskari-frontend/packages/framework/featuredata/bundle.js';
 import 'oskari-lazy-loader?language-selector!oskari-frontend/packages/framework/bundle/language-selector/bundle.js';
 
 // 3D support
