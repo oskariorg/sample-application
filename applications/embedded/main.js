@@ -25,5 +25,6 @@ import 'oskari-lazy-loader?timeseries!oskari-frontend/packages/framework/bundle/
 
 import 'oskari-lazy-loader?metadataflyout!oskari-frontend/packages/catalogue/bundle/metadataflyout/bundle.js';
 import 'oskari-lazy-loader?metadatasearch!oskari-frontend/packages/catalogue/metadatasearch/bundle.js';
+import 'oskari-lazy-loader?announcements!oskari-frontend/packages/framework/bundle/announcements/bundle.js';
 
 import './css/overwritten.css';
