@@ -31,6 +31,7 @@ import 'oskari-loader!oskari-frontend/packages/framework/bundle/timeseries/bundl
 import 'oskari-loader!oskari-frontend/packages/framework/bundle/userguide/bundle.js';
 import 'oskari-lazy-loader?featuredata!oskari-frontend/packages/framework/featuredata/bundle.js';
 import 'oskari-lazy-loader?language-selector!oskari-frontend/packages/framework/bundle/language-selector/bundle.js';
+import 'oskari-loader!oskari-frontend/packages/framework/bundle/findbycoordinates/bundle.js';
 
 // 3D support
 import 'oskari-loader!oskari-frontend/packages/mapping/olcs/map3dtiles/bundle.js';
