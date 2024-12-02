@@ -1,5 +1,6 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
+// https://github.com/oskariorg/oskari-frontend/pull/2662
+//import { storiesOf } from '@storybook/react';
 import { Button } from 'oskari-ui';
 
 storiesOf('Sample Application', module)
