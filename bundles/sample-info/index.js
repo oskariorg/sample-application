@@ -1,5 +1,4 @@
-// imports for SampleInfoBundleInstance
-import './instance.js';
+import { SampleInfoBundleInstance } from './instance.js';
 
-// register create function for bundleid
-Oskari.bundle('sample-info', () => Oskari.clazz.create('Oskari.sample.info.SampleInfoBundleInstance'));
+// register factory function for our bundle
+Oskari.bundle('sample-info', () => new SampleInfoBundleInstance());
