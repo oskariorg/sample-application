@@ -24,14 +24,15 @@ import 'oskari-loader!oskari-frontend/packages/mapping/ol/userstyle/bundle.js';
 
 import 'oskari-loader!oskari-frontend/packages/framework/bundle/coordinatetool/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/framework/bundle/guidedtour/bundle.js';
-import 'oskari-loader!oskari-frontend/packages/framework/layerlist/bundle.js';
+import 'oskari-bundle!oskari-frontend/bundles/framework/layerlist/';
 import 'oskari-loader!oskari-frontend/packages/framework/bundle/maplegend/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/framework/bundle/statehandler/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/framework/bundle/search/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/framework/bundle/timeseries/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/framework/bundle/userguide/bundle.js';
 
-import 'oskari-loader!../../packages/sample/bundle/sample-info/bundle.js';
+// app-specific bundle
+import 'oskari-bundle!../../bundles/sample-info';
 
 // mobile tuning
 import 'oskari-lazy-loader?myplaces3!oskari-loader!oskari-frontend/packages/framework/bundle/myplaces3/bundle.js';
@@ -45,7 +46,7 @@ import 'oskari-lazy-loader?featuredata!oskari-frontend/packages/framework/featur
 import 'oskari-lazy-loader?printout!oskari-frontend/packages/framework/bundle/printout/bundle.js';
 import 'oskari-lazy-loader?admin-layereditor!oskari-frontend/packages/admin/bundle/admin-layereditor/bundle.js';
 import 'oskari-lazy-loader?admin-permissions!oskari-frontend/packages/admin/bundle/admin-permissions/bundle.js';
-import 'oskari-lazy-loader?admin!oskari-frontend/packages/admin/bundle/admin/bundle.js';
+import 'oskari-lazy-bundle?admin!oskari-frontend/bundles/admin/admin';
 import 'oskari-lazy-loader?metrics!oskari-frontend/packages/admin/bundle/metrics/bundle.js';
 import 'oskari-lazy-loader?appsetup!oskari-frontend/packages/admin/bundle/appsetup/bundle.js';
 import 'oskari-lazy-loader?admin-users!oskari-frontend/packages/framework/bundle/admin-users/bundle.js';
