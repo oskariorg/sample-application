@@ -1,5 +1,11 @@
-
 import { BasicBundleInstance } from 'oskari-ui/BasicBundleInstance';
+
+/*
+ * This is an example of an app-specific bundle. It:
+ * - registers itself with bundle id `sample-info` (at the end of the file)
+ * - when started it tries to add an info segment to the `guidedtour` bundle by using the request API
+ * - it handles loading/startup order and retries if this bundle has been started before the `guidedtour` bundle
+ */
 
 // most bundle instances register themselves on the sandbox with the bundles getName() function
 // for the bundle with id `guidedtour` the getName() returns 'GuidedTour' so we can use that to search for it:
@@ -16,7 +22,10 @@ const runAfterGuidedTourStarts = (lazyStartFn) => {
         }
     });
 }
+// Get a logger instance for our bundle
+const log = Oskari.log('SampleInfoBundleInstance');
 
+// The bundle instance implementation:
 class SampleInfoBundleInstance extends BasicBundleInstance {
     // BasicBundle provides start() and calls _startImpl() at the end
     // This is the code that is run when this bundle is started as part of an application
@@ -26,7 +35,11 @@ class SampleInfoBundleInstance extends BasicBundleInstance {
         // What this bundle does is it adds a segment to the guided tour introduction popup
         this._registerForGuidedTour();
         // You can listen to Oskari events like this:
-        this.on('MapClickedEvent', (evt) => console.log('map clicked at', evt));
+        this.on('MapClickedEvent', (evt) => {
+            log.info('map clicked at', evt)
+            // stop listening to map clicked event after the first one as an example
+            this.off('MapClickedEvent');
+        });
     }
 
     /**
@@ -37,16 +50,20 @@ class SampleInfoBundleInstance extends BasicBundleInstance {
         // sandbox provides ways to interact with other parts of the application
         const sandbox = this.getSandbox();
 
-        // here we check if there is a 'GuidedTour' module is found on the application
+        // check if there is a 'GuidedTour' module has already been started as part of the application
         if (!hasGuidedTourBundleStarted(sandbox)) {
-            // The bundle hasn't been started yet
+            // Handle the case where the Guided tour hasn't been started yet
             // Lets run the registration later when the guidedtour bundle starts since guided tour might be started later than this bundle
             runAfterGuidedTourStarts(() => this._registerForGuidedTour());
+            // debug logging is not shown in console by default
+            log.debug(`Guided tour not started yet, we'll try again later`);
             // don't go further since we don't have anything to do without the `guidedtour` functionality
             return;
         }
-        // Here we know that the bundle has been started, but just to be sure we can check it still provides the request that we need here as API
+        // Here we know that the Guided tour bundle has been started
+        // But just to be sure, we can check the request API that we need here is now available
         if (!sandbox.hasHandler('Guidedtour.AddToGuidedTourRequest')) {
+            log.error(`Guided tour bundle doesn't provide the 'Guidedtour.AddToGuidedTourRequest'. The sample-info bundle cannot function properly!`);
             // This shouldn't happen since we get this far only if the GuidedTour bundle has been started as part of the app
             // This could happen if for some reason the `GuidedTour` bundle no longer provided the `Guidedtour.AddToGuidedTourRequest`
             return;
@@ -59,12 +76,11 @@ class SampleInfoBundleInstance extends BasicBundleInstance {
             bundleName: this.getName(),
             priority: 5,
             getTitle: () => this.loc('guidedTour.title'),
-            getContent: () => this.loc('guidedTour.message'),
-            getPositionRef: () => jQuery('#login'),
-            positionAlign: 'right'
+            getContent: () => this.loc('guidedTour.message')
         }]);
     }
 };
 
-// register factory function for our bundle
+// register our bundles factory function for bundle id 'sample-info'
+// This was the bundle can be started by referencing it on the startup sequence of an app with the bundle id
 Oskari.bundle('sample-info', () => new SampleInfoBundleInstance());
