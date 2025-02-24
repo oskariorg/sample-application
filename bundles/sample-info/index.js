@@ -21,7 +21,7 @@ const runAfterGuidedTourStarts = (lazyStartFn) => {
             lazyStartFn();
         }
     });
-}
+};
 // Get a logger instance for our bundle
 const log = Oskari.log('SampleInfoBundleInstance');
 
@@ -36,7 +36,7 @@ class SampleInfoBundleInstance extends BasicBundleInstance {
         this._registerForGuidedTour();
         // You can listen to Oskari events like this:
         this.on('MapClickedEvent', (evt) => {
-            log.info('map clicked at', evt)
+            log.info('map clicked at', evt);
             // stop listening to map clicked event after the first one as an example
             this.off('MapClickedEvent');
         });
