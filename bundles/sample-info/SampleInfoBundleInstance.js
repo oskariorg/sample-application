@@ -1,4 +1,6 @@
 import { BasicBundleInstance } from 'oskari-ui/BasicBundleInstance';
+import './event/HelloEvent';
+import './request/HelloRequest';
 
 /*
  * This is an example of an app-specific bundle. It:
@@ -35,12 +37,8 @@ export class SampleInfoBundleInstance extends BasicBundleInstance {
         super.start(sandbox);
         // What this bundle does is it adds a segment to the guided tour introduction popup
         this._registerForGuidedTour();
-        // You can listen to Oskari events like this:
-        this.on('MapClickedEvent', (evt) => {
-            log.info('map clicked at', evt);
-            // stop listening to map clicked event after the first one as an example
-            this.off('MapClickedEvent');
-        });
+        // demonstrate how to interact with other bundles
+        this._interactionDemo();
     }
 
     /**
@@ -79,5 +77,42 @@ export class SampleInfoBundleInstance extends BasicBundleInstance {
             getTitle: () => this.loc('guidedTour.title'),
             getContent: () => this.loc('guidedTour.message')
         }]);
+    }
+
+    /**
+     * This function demonstrates:
+     * - how to trigger an event that the bundle provides/notify other bundles that something happened
+     * - how to provide a request that other bundles can use
+     * - How to listen to events like the 'MapClickedEvent' from `mapmodule` bundle
+     */
+    _interactionDemo () {
+        // sandbox provides ways to interact with other parts of the application
+        const sandbox = this.getSandbox();
+        // HelloEvent is provided by this bundle (in ./event/HelloEvent.js)
+        //  to notify other bundles that something happened in the application that other bundles might be interested to know
+        //  this is a simple example how to do this and it doesn't make much sense here,
+        //  but consider you have a shopping cart bundle that can notify other bundles when items have been added to the cart
+        //  another bundle might change recommendations on it's own UI based on this info
+        const eventTemplate = Oskari.eventBuilder('HelloEvent');
+        // Lets register handling a HelloRequest and send a HelloEvent when we get one just as a simple demo
+        //  HelloRequest is provided by this bundle (in ./request/HelloRequest.js)
+        // now other bundles can request this bundle to do something
+        this.addRequestHandler('HelloRequest', (req) => sandbox.notifyAll(eventTemplate(req.getTarget())));
+        // You can listen to Oskari events from other bundles like this:
+        this.on('MapClickedEvent', (evt) => {
+            log.info('map clicked at', evt);
+            // stop listening to map clicked event after the first one as an example
+            this.off('MapClickedEvent');
+            // simulate being another bundle that requests us to welcome the clicked coordinates
+            sandbox.postRequestByName('HelloRequest', [`something at coordinates [${evt.getLonLat().lon}, ${evt.getLonLat().lat}]`]);
+        });
+
+        // Nothing prevents us from listening to our own events as well:
+        this.on('HelloEvent', (evt) => {
+            log.info(`Hello ${evt.getTarget()}`);
+        });
+        // We can also call our code from the browser dev console with:
+        // Oskari.getSandbox().postRequestByName('HelloRequest'); for "Hello World"
+        // Oskari.getSandbox().postRequestByName('HelloRequest', ['User']); for "Hello User"
     }
 };
