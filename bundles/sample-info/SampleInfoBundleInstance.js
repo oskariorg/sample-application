@@ -101,8 +101,6 @@ export class SampleInfoBundleInstance extends BasicBundleInstance {
         // You can listen to Oskari events from other bundles like this:
         this.on('MapClickedEvent', (evt) => {
             log.info('map clicked at', evt);
-            // stop listening to map clicked event after the first one as an example
-            this.off('MapClickedEvent');
             // simulate being another bundle that requests us to welcome the clicked coordinates
             sandbox.postRequestByName('HelloRequest', [`something at coordinates [${evt.getLonLat().lon}, ${evt.getLonLat().lat}]`]);
         });
@@ -110,9 +108,12 @@ export class SampleInfoBundleInstance extends BasicBundleInstance {
         // Nothing prevents us from listening to our own events as well:
         this.on('HelloEvent', (evt) => {
             log.info(`Hello ${evt.getTarget()}`);
+
+            // stop listening to map clicked event after the first one as an example
+            this.off('MapClickedEvent');
+            // We can still call our code with the request from the browser dev console with:
+            // Oskari.getSandbox().postRequestByName('HelloRequest'); for "Hello World"
+            // Oskari.getSandbox().postRequestByName('HelloRequest', ['User']); for "Hello User"
         });
-        // We can also call our code from the browser dev console with:
-        // Oskari.getSandbox().postRequestByName('HelloRequest'); for "Hello World"
-        // Oskari.getSandbox().postRequestByName('HelloRequest', ['User']); for "Hello User"
     }
 };
