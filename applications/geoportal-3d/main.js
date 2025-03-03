@@ -6,7 +6,7 @@ import 'oskari-loader!oskari-frontend/packages/framework/bundle/divmanazer/bundl
 // 3D mapmodule
 import 'oskari-loader!oskari-frontend/packages/mapping/olcs/mapmodule/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/mapping/olcs/map3dtiles/bundle.js';
-import 'oskari-loader!oskari-frontend/packages/mapping/time-control-3d/bundle.js';
+import 'oskari-bundle!oskari-frontend/bundles/mapping/time-control-3d';
 import 'oskari-bundle!oskari-frontend/bundles/mapping/camera-controls-3d';
 import 'oskari-bundle!oskari-frontend/bundles/mapping/dimension-change';
 
@@ -37,7 +37,7 @@ import 'oskari-bundle!../../bundles/sample-info';
 // mobile tuning
 import 'oskari-lazy-bundle?myplaces3!oskari-frontend/bundles/framework/myplaces3';
 import 'oskari-lazy-bundle?myplacesimport!oskari-frontend/bundles/framework/myplacesimport';
-import 'oskari-lazy-loader?mydata!oskari-frontend/bundles/framework/mydata/bundle.js';
+import 'oskari-lazy-bundle?mydata!oskari-frontend/bundles/framework/mydata';
 import 'oskari-lazy-bundle?publisher2!oskari-frontend/bundles/framework/publisher2';
 import 'oskari-lazy-bundle?statsgrid!oskari-frontend/bundles/statistics/statsgrid';
 import 'oskari-lazy-bundle?featuredata!oskari-frontend/bundles/framework/featuredata';
