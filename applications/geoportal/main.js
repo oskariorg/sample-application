@@ -43,7 +43,7 @@ import 'oskari-bundle!../../bundles/sample-info';
 // mobile tuning
 import 'oskari-lazy-bundle?myplaces3!oskari-frontend/bundles/framework/myplaces3';
 import 'oskari-lazy-bundle?myplacesimport!oskari-frontend/bundles/framework/myplacesimport';
-import 'oskari-lazy-loader?mydata!oskari-frontend/bundles/framework/mydata/bundle.js';
+import 'oskari-lazy-bundle?mydata!oskari-frontend/bundles/framework/mydata';
 import 'oskari-lazy-bundle?publisher2!oskari-frontend/bundles/framework/publisher2';
 import 'oskari-lazy-bundle?statsgrid!oskari-frontend/bundles/statistics/statsgrid';
 // end mobile tuning
