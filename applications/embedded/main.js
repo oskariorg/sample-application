@@ -23,7 +23,6 @@ import 'oskari-loader!oskari-frontend/packages/mapping/ol/drawtools/bundle.js';
 //  note: new loader
 import 'oskari-bundle!oskari-frontend/bundles/framework/coordinatetool';
 import 'oskari-bundle!oskari-frontend/bundles/framework/publishedstatehandler';
-import 'oskari-bundle!oskari-frontend/bundles/framework/maplegend';
 
 // RPC connector
 //  note: old loader
@@ -33,6 +32,7 @@ import 'oskari-loader!oskari-frontend/packages/framework/bundle/rpc/bundle.js';
 //  note: old loader
 import 'oskari-lazy-loader?maprotator!oskari-frontend/packages/mapping/ol/maprotator/bundle.js';
 //  note: new loader
+import 'oskari-lazy-bundle?maplegend!oskari-frontend/bundles/framework/maplegend';
 import 'oskari-lazy-bundle?featuredata!oskari-frontend/bundles/framework/featuredata';
 import 'oskari-lazy-bundle?statsgrid!oskari-frontend/bundles/statistics/statsgrid';
 import 'oskari-lazy-bundle?routingService!oskari-frontend/bundles/framework/routingService';
