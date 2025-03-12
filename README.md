@@ -1,8 +1,8 @@
 ![alt text](oskari_logo_rgb_horizontal.svg "Oskari logo")
 
-# Sample application (template repository)
+# Template for Oskari-based frontend
 
-This repository is an example that can be used as a template for building Oskari application frontend.
+This repository is an example that can be used as a template for building a frontend/browser-based UI for Oskari-based applications.
 
 Click the "Use this template" button on the repository to create a copy of the files under your username and start customizing it.
 
