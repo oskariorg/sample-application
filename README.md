@@ -1,4 +1,4 @@
-![alt text](oskari_logo_rgb_horizontal.svg "Oskari logo")
+![alt text](applications/geoportal/oskari_logo_rgb_horizontal.svg "Oskari logo")
 
 # Template for Oskari-based frontend
 
