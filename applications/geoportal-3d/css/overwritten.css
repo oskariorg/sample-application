@@ -11,7 +11,7 @@ table {
   #logobar {
     height: 100px;
     overflow: hidden;
-    background-image: url('../oskari_logo_white_horizontal.svg');
+    background-image: url('../../geoportal/oskari_logo_white_horizontal.svg');
     background-repeat: no-repeat;
     background-origin: content-box;
     background-position: 0px 8px;
