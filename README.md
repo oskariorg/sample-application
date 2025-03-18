@@ -6,9 +6,9 @@ This repository is an template for building a browser-based UI for Oskari-based 
 
 For customizing your own application, click the "Use this template" button on the repository to create a copy of the files under your username.
 
-For fully functioning web application you will also need a server-side component. A template for creating your own Oskari-based backend service can be found in https://github.com/oskariorg/sample-server-extension.
+For fully functioning web application you will also need a server-side component. A template for creating your own Oskari-based backend service can be found in [https://github.com/oskariorg/sample-server-extension].
 
-These two combined can be used for creating Oskari-based applications such as featured in https://dev.oskari.org.
+These two combined can be used for creating Oskari-based applications such as featured in [https://dev.oskari.org].
 
 ## Setup
 
@@ -16,7 +16,7 @@ Here are the steps to setup the build environment:
 
 1. Make sure you have the command line programs `git` and `node`
 2. Clone the application repository (this one or using the GitHub template to make your own copy): `git clone https://github.com/oskariorg/sample-application.git`
-3. Run `npm install`
+3. Run `npm install` on the `sample-application` folder
 
 Versions:
 - `nodejs` version 16.12.0 or greater (recommended 20)
