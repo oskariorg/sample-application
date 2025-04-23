@@ -1,12 +1,12 @@
 {
   "name": "sample-application",
-  "version": "2.1.0-dev",
+  "version": "2.0.1",
   "description": "Sample frontend for Oskari map application. Site visible in dev.oskari.org.",
   "keywords": [
     "Oskari"
   ],
   "dependencies": {
-    "oskari-frontend": "git+https://git@github.com/oskariorg/oskari-frontend.git#develop"
+    "oskari-frontend": "git+https://git@github.com/oskariorg/oskari-frontend.git#3.0.1"
   },
   "devDependencies": {
     "@cyclonedx/bom": "^3.10.1"
