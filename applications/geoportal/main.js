@@ -6,6 +6,9 @@ import 'oskari-loader!oskari-frontend/packages/framework/bundle/oskariui/bundle.
 import 'oskari-loader!oskari-frontend/packages/framework/bundle/ui-components/bundle.js';
 import 'oskari-loader!oskari-frontend/packages/framework/bundle/divmanazer/bundle.js';
 
+// the brand new mainnavigation to replace divmanazer eventually
+import 'oskari-bundle!oskari-frontend/bundles/framework/mainnavigation';
+
 // 2D mapmodule and support for additional map layer types
 import 'oskari-bundle!oskari-frontend/bundles/mapping/mapmodule/map2d_ol';
 import 'oskari-bundle!oskari-frontend/bundles/mapping/maparcgis';
